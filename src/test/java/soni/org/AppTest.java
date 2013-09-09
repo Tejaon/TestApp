@@ -9,15 +9,17 @@ import junit.framework.TestSuite;
 public class AppTest extends TestCase
 {
        // Test cases from Numerical to Roman
-         public void testRomanNumeral1() {
+    public void testRomanNumeral1() {
          int num1=20, num2=1975;
          String exp1 ="XX", exp2="MCMLXXV";
          RomanNumeral1 Roman = new RomanNumeral1(num1);
          String act1=String.valueOf(Roman.toString());
          assertEquals("Expected Result", act1, exp1);
+        System.out.println("Value=" +num1 + " -> " +act1);
          Roman = new RomanNumeral1(num2);
          String act2=String.valueOf(Roman.toString());
          assertEquals("Expected Result", act2, exp2);
+        System.out.println("Value=" +num2 + " -> " +act2);
         }
 
     public void testRomanNumeral2() {
@@ -27,9 +29,11 @@ public class AppTest extends TestCase
         RomanNumeral1 Roman = new RomanNumeral1(str1);
         String act1=String.valueOf(Roman.toInt());
         assertEquals("Expected Result", act1, exp1);
+        System.out.println("Value=" +str1 + " -> " +act1);
         Roman = new RomanNumeral1(str2);
         String act2=String.valueOf(Roman.toInt());
         assertEquals("Expected Result", act2, exp2);
+        System.out.println("Value=" +str2 + " -> " +act2);
     }
 
     /**
@@ -42,14 +46,6 @@ public class AppTest extends TestCase
             String actual=String.valueOf(Roman.toString());
             System.out.println("Value=" +i + " -> " +actual);
     }
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+       return new TestSuite( AppTest.class );
     }
 }
